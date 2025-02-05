@@ -1,5 +1,6 @@
 import java.util.*;
 public class class1 {
+    
     public static int avg(int a,int b,int c){
         return (a+b+c)/3;
     }
@@ -146,7 +147,6 @@ public class class1 {
 
     }
 
-    
        public static void main(String args[]){
         // int a;
         Scanner obj=new Scanner(System.in);
@@ -165,7 +165,7 @@ public class class1 {
             
         // }
         // System.out.print(max);
-        int a,b,c;
+        // int a,b,c;
         // a=obj.nextInt();
         // b=obj.nextInt();
         // c=obj.nextInt();
@@ -191,14 +191,34 @@ public class class1 {
         //     max=(max>arr[i]?max:arr[i]);
         // }
         // System.out.print(max);
-        int arr[]={1,2,3,4,5};
+        // int arr[]={1,2,3,4,5};
         // int t=10;
     //    System.out.println(binary(arr,t));
         // reverse(arr);
         // pair(arr);
         // all(arr);
         // System.out.println(max3(arr));
-        rotate(arr,2);
+        // rotate(arr,2);
+        int[] arr={1,4,3,2,5};
+        int max=Integer.MIN_VALUE;
+        int e=arr.length-1;
+         int find;
+
+        
+        while(e>=0){
+          for(int i=0;i<e;i++){
+            if(arr[i]>arr[i+1]){
+                int temp=arr[i];
+                arr[i]=arr[i+1];
+                arr[i+1]=temp;
+            }
+
+          }
+          e--;
+        }
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+";");
+        }
         
     }
 }

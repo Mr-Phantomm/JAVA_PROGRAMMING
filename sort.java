@@ -14,17 +14,64 @@ public class sort {
         }
     }
     public static void insertion(int[] arr){
-        int e=0;
-        for(int i=0;i<e)
+        int a=0;
+       
+        
     }
     public static void show(int[] arr){
         for(int i=0;i<arr.length;i++){
             System.out.print(arr[i]+" ");
         }
     }
+    public static int binary(int[] arr,int k){
+        int s=0;
+        int e=arr.length-1;
+        int m=(s+e)/2;
+        for(int i=s;i<=e;i++){
+            m=(s+e)/2;
+            if(arr[m]==k){
+                return m;
+            }
+            if(arr[m]>k){
+                e=m-1;
+                continue;
+            }
+            if(arr[m]<k){
+                s=m+1;
+                continue;
+            }
+            
+            
+        }
+        return -1;
+    }
+    public static int firstocc(int[] arr,int k){
+        int s=0;
+        int e=arr.length-1;
+        int mid;
+        int ans=-1;
+        while(s<=e){
+            mid=s+((e-s)/2);
+            if(arr[mid]==k){
+                ans=mid;
+                e=mid-1;
+                
+            }
+            if(arr[mid]>k){
+                e=mid-1;
+            }
+            if(arr[mid]<k){
+                s=mid+1;
+            }
+        }
+        return ans;
+    }
     public static void main(String args[]){
-        int[] arr={2,1,3,4,5};
-        selection(arr);
-        show(arr);
+        int[] arr={1,2,3,3,4,5,31};
+        // selection(arr);
+        // show(arr);
+        int k=3;
+        int a=firstocc(arr,k);
+        System.out.print(a);
     }
 }

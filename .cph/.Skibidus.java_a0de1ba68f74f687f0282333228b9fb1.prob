@@ -1,0 +1,1 @@
+{"name":"Local: Skibidus","url":"u:\\JAVA_PROGRAMMING\\Skibidus.java","tests":[{"id":1739119559135,"input":"4\nbaa\nskibidus\ncc\nohio\n","output":"1\n8\n1\n4\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"u:\\JAVA_PROGRAMMING\\Skibidus.java","group":"local","local":true}

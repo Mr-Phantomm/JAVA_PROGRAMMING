@@ -1,6 +1,7 @@
 import java.util.*;
 import java.lang.*;
 public class six {
+    
     public static void palindrome(String str){
         int s=0;
         int e=str.length()-1;
@@ -41,6 +42,7 @@ public class six {
         int y2=y*y;
         return (float) Math.sqrt(x2+y2);
     }
+    static int s;
     public static void main(String args[]){
         // String str;
         Scanner obj=new Scanner(System.in);
@@ -80,28 +82,51 @@ public class six {
         // str2.append(str.charAt(str.length()-1));
         // str2.append(count);
         // System.out.println(str2);
-        String str1="race";
-        String str2="care";
-        int check=0;
-        for(int i=0;i<str1.length();i++){
-            // for(int j=0;j<str2.length();j++){
-            //     if(str1.charAt(i)==str2.charAt(j)){
-            //         str1.charAt(i)='';
-            //         str2.charAt(j)='';
+        // String str1="race";
+        // String str2="care";
+        // int check=0;
+        // for(int i=0;i<str1.length();i++){
+        //     // for(int j=0;j<str2.length();j++){
+        //     //     if(str1.charAt(i)==str2.charAt(j)){
+        //     //         str1.charAt(i)='';
+        //     //         str2.charAt(j)='';
 
-            //     }
-            // }
-            check+=str1.charAt(i);
+        //     //     }
+        //     // }
+        //     check+=str1.charAt(i);
+        // }
+        // for(int i=0;i<str2.length();i++){
+        //     check-=str2.charAt(i);
+        // }
+        // System.out.println(check);
+        // if(check!=0){
+        //     System.out.println("not anagrams");
+        // }
+        // else{
+        //     System.out.println("anagrams");
+        // }
+        String str="my Name is Arun";
+        StringBuilder su= new StringBuilder("");
+        
+        int e;
+        int count =0;
+        
+        for(int i=0;i<str.length();i++){
+            if(count==0&&str.charAt(i)!=' '){
+                count++;
+                s=i;
+            }
+            if(count==1&&(str.charAt(i)==' '||str.length()-1==i)){
+                e=i;
+                for(int j=s;j<=e;j++){
+                    su.append(str.charAt(i));
+                }
+                count--;
+            }
+            
         }
-        for(int i=0;i<str2.length();i++){
-            check-=str2.charAt(i);
-        }
-        System.out.println(check);
-        if(check!=0){
-            System.out.println("not anagrams");
-        }
-        else{
-            System.out.println("anagrams");
-        }
+        System.out.println(su);
+
+
     }
 }

@@ -66,12 +66,15 @@ public class sort {
         }
         return ans;
     }
+    public static int[] mergesort(int[] arr,int s,int e){
+        
+    }
     public static void main(String args[]){
         int[] arr={1,2,3,3,4,5,31};
         // selection(arr);
         // show(arr);
-        int k=3;
-        int a=firstocc(arr,k);
+        // int k=3;
+        // int a=firstocc(arr,k);
         System.out.print(a);
     }
 }

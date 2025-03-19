@@ -1,0 +1,123 @@
+public class linkedlist2 {
+    public static class Node{
+        int value;
+        Node next;
+        Node(int value){
+            this.value=value;
+            this.next=null;
+        }
+        Node(int value,Node next){
+            this.value=value;
+            this.next=next;
+        }
+    }
+    public static Node head;
+    public static Node tail;
+    public static int size=0;
+    public static void addfirst(int value){
+        Node nw=new Node(value);
+        size++;
+        if(head==null){
+            head=tail=nw;
+            return;
+        }
+        nw.next=head;
+        head=nw;
+    }
+    public static void addlast(int value){
+        Node nw=new Node(value);
+        size++;
+        if(tail==null){
+            head=tail=nw;
+            return;
+        }
+        tail.next=nw;
+        tail=nw;
+
+
+    }
+    public static void print(){
+        Node temp=head;
+        while(temp!=null){
+            System.out.print(temp.value+"=>");
+            temp=temp.next; 
+            
+        }
+        System.out.print("null");
+
+    }
+    public static void addatindex(int i,int data){
+        size++;
+        Node temp2=head;
+        for(int j=0;j<i-1;j++){
+            temp2=temp2.next;
+        }
+
+        Node nw=new Node(data);
+        nw.next=temp2.next;
+        temp2.next=nw;
+    }
+    public static void Removefirst(){
+
+        if(head==null){
+            return;
+        }
+        size--;
+        Node temp=head;
+        head=head.next;  
+        temp.next=null;
+    }
+    public static void removeLast(){
+        if(head==null){
+            return;
+        }
+        Node temp=head;
+        while(temp.next.next!=null){
+            temp=temp.next;
+
+        }
+        tail=temp;
+        tail.next=null;
+    }
+    public static void removemiddle(int i){
+        Node temp1=head;
+        Node temp2=head;
+        for(int j=0;j<i+1;j++){
+            if(j<i-1){
+                temp1=temp1.next;
+            }
+            temp2=temp2.next;
+
+        }
+        temp1.next=temp2;
+    }
+    public static void main(String args[]){
+        linkedlist2 ll=new linkedlist2();
+        // ll.head=new Node(2);
+        // ll.tail=ll.head;
+        // ll.tail=new Node(3);
+        // ll.head.next=ll.tail;
+        // ll.addfirst(5);
+        ll.addlast(6);
+        ll.addlast(7);
+        ll.addlast(8);
+        ll.addlast(9);
+        ll.addlast(7);
+        ll.addlast(8);
+        ll.addlast(9);
+        ll.addatindex(2,3);
+        System.out.println(ll.size);
+        ll.print();
+        ll.Removefirst();
+        System.out.println();
+        ll.print();
+        ll.removeLast();
+        System.out.println();
+        ll.print();
+        ll.removemiddle(1);
+        System.out.println();
+        ll.print();
+        
+    }
+}
+

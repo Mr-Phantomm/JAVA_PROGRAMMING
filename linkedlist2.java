@@ -91,6 +91,31 @@ public class linkedlist2 {
         }
         temp1.next=temp2;
     }
+    public static int search(Node temp,int i,int x){
+
+        if(temp==null){
+            return -1;
+        }
+        if(temp.value==i){
+            return x;
+        }
+        else{
+            return search(temp.next,i,x+1);
+        }
+
+
+    }
+    public static void reverse(){
+        Node temp=null;
+        Node curr=head;
+        Node next=head.next;
+        while(curr.next!=null){
+            curr.next=temp;
+            temp =curr;
+            curr=next;
+            next=next.next;
+        }
+    }
     public static void main(String args[]){
         linkedlist2 ll=new linkedlist2();
         // ll.head=new Node(2);
@@ -99,7 +124,7 @@ public class linkedlist2 {
         // ll.head.next=ll.tail;
         // ll.addfirst(5);
         ll.addlast(6);
-        ll.addlast(7);
+        // ll.addlast(7);
         ll.addlast(8);
         ll.addlast(9);
         ll.addlast(7);
@@ -108,15 +133,20 @@ public class linkedlist2 {
         ll.addatindex(2,3);
         System.out.println(ll.size);
         ll.print();
-        ll.Removefirst();
         System.out.println();
+        // ll.Removefirst();
+        // System.out.println();
+        // ll.print();
+        // ll.removeLast();
+        // System.out.println();
+        // ll.print();
+        // ll.removemiddle(1);
+        // System.out.println();
+        // ll.print();
+        // System.out.println(ll.search(head,7,0));
+        ll.reverse();
         ll.print();
-        ll.removeLast();
-        System.out.println();
-        ll.print();
-        ll.removemiddle(1);
-        System.out.println();
-        ll.print();
+        
         
     }
 }

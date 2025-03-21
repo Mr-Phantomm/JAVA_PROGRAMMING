@@ -1,3 +1,5 @@
+import java.security.NoSuchAlgorithmException;
+
 public class linkedlist2 {
     public static class Node{
         int value;
@@ -36,29 +38,19 @@ public class linkedlist2 {
 
 
     }
-    public static void print(){
-        Node temp=head;
-        while(temp!=null){
-            System.out.print(temp.value+"=>");
-            temp=temp.next; 
-            
-        }
-        System.out.print("null");
-
-    }
     public static void addatindex(int i,int data){
         size++;
         Node temp2=head;
         for(int j=0;j<i-1;j++){
             temp2=temp2.next;
         }
-
+        
         Node nw=new Node(data);
         nw.next=temp2.next;
         temp2.next=nw;
     }
     public static void Removefirst(){
-
+        
         if(head==null){
             return;
         }
@@ -74,7 +66,7 @@ public class linkedlist2 {
         Node temp=head;
         while(temp.next.next!=null){
             temp=temp.next;
-
+            
         }
         tail=temp;
         tail.next=null;
@@ -87,12 +79,12 @@ public class linkedlist2 {
                 temp1=temp1.next;
             }
             temp2=temp2.next;
-
+            
         }
         temp1.next=temp2;
     }
     public static int search(Node temp,int i,int x){
-
+        
         if(temp==null){
             return -1;
         }
@@ -102,19 +94,38 @@ public class linkedlist2 {
         else{
             return search(temp.next,i,x+1);
         }
-
-
+        
+        
     }
     public static void reverse(){
+        if(head==null||head.next==null){
+            return;
+        }
         Node temp=null;
         Node curr=head;
-        Node next=head.next;
-        while(curr.next!=null){
+        Node next=null;
+        while(curr!=null){
+            next=curr.next;
             curr.next=temp;
             temp =curr;
             curr=next;
-            next=next.next;
+            
+        } 
+        tail=head;
+        head=temp;
+    }
+    public static void print(){
+        Node temp=head;
+        while(temp!=null){
+            System.out.print(temp.value+"=>");
+            temp=temp.next; 
+            
         }
+        System.out.print("null");
+
+    }
+    public static boolean palindromecheck(){
+        while()
     }
     public static void main(String args[]){
         linkedlist2 ll=new linkedlist2();
@@ -146,7 +157,8 @@ public class linkedlist2 {
         // System.out.println(ll.search(head,7,0));
         ll.reverse();
         ll.print();
-        
+
+
         
     }
 }

@@ -124,8 +124,19 @@ public class linkedlist2 {
         System.out.print("null");
 
     }
+    public static Node mid(){
+        Node slow = head;
+        Node fast=head;
+        while(fast!=null||fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        return slow;
+    }
     public static boolean palindromecheck(){
-        while()
+        Node mid=mid();
+        
+        return true;
     }
     public static void main(String args[]){
         linkedlist2 ll=new linkedlist2();

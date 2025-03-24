@@ -1,3 +1,4 @@
+import java.nio.channels.Pipe.SourceChannel;
 import java.security.NoSuchAlgorithmException;
 
 public class linkedlist2 {
@@ -125,17 +126,36 @@ public class linkedlist2 {
 
     }
     public static Node mid(){
+        
         Node slow = head;
         Node fast=head;
-        while(fast!=null||fast.next!=null){
+        while(fast!=null&&fast.next!=null){
             slow=slow.next;
             fast=fast.next.next;
         }
         return slow;
     }
     public static boolean palindromecheck(){
-        Node mid=mid();
-        
+        if(head==null||size==0){
+            return true;
+        }
+        Node prev=null;
+        Node curr=mid();
+        Node next=null;
+        Node temp=head;
+        while(curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;            
+        }
+        while(prev!=null&&temp!=null){
+            if(prev.value!=temp.value){
+                return false;
+            }
+            prev=prev.next;
+            temp=temp.next;
+        }
         return true;
     }
     public static void main(String args[]){
@@ -148,11 +168,11 @@ public class linkedlist2 {
         ll.addlast(6);
         // ll.addlast(7);
         ll.addlast(8);
-        ll.addlast(9);
-        ll.addlast(7);
         ll.addlast(8);
-        ll.addlast(9);
-        ll.addatindex(2,3);
+        ll.addlast(6);
+        ll.addlast(8);
+        // ll.addlast(9);
+        // ll.addatindex(2,3);
         System.out.println(ll.size);
         ll.print();
         System.out.println();
@@ -168,6 +188,8 @@ public class linkedlist2 {
         // System.out.println(ll.search(head,7,0));
         ll.reverse();
         ll.print();
+        System.out.println();
+        System.out.println(ll.palindromecheck());
 
 
         

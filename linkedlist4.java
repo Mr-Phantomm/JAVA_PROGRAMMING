@@ -63,12 +63,19 @@ public class linkedlist4 {
             slow=slow.next;
             fast=fast.next.next;
             if(fast==slow){
-                slow.next.next.next.next=null;
-                print();
-                return;
+                break;
             }
         }
-        System.out.println("No Loop");
+        slow=head;
+        Node temp=fast;
+        while(slow!=fast){
+            temp=fast;
+            slow=slow.next;
+            fast=fast.next;
+
+        }
+        temp.next=null;
+        // System.out.println("No Loop");
     }
     public static void main(String[] args) {
         linkedlist4 ll=new linkedlist4();
@@ -87,5 +94,6 @@ public class linkedlist4 {
         
         System.out.println(ll.findloop());
         ll.correctloop();
+        ll.print();
     }
 }

@@ -67,7 +67,9 @@ public class sort {
         return ans;
     }
     public static int[] mergesort(int[] arr,int s,int e){
-        
+        if(s==e){
+            return
+        }
     }
     public static void main(String args[]){
         int[] arr={1,2,3,3,4,5,31};

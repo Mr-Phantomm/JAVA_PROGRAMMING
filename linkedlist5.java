@@ -2,6 +2,7 @@ public class linkedlist5{
     class Node{
         int data;
         Node next;
+        
         Node(int data){
             this.data=data;
             this.next=null;
@@ -13,6 +14,7 @@ public class linkedlist5{
             this.data=data;
             this.next=next;
         }
+
     }
     public static Node head;
     public static Node tail;

@@ -34,10 +34,13 @@ public class linkedlist7 {
     public static Node mid(Node head){
         Node slow=head;
         Node fast=head;
+        Node prev=head;
         while(fast!=null&&fast.next!=null){
+            prev=slow;
             slow=slow.next;
             fast=fast.next.next;
         }
+        prev.next=null;
         return slow;
     }
     public static Node rev(Node head){
@@ -61,15 +64,23 @@ public class linkedlist7 {
         Node nexttemp1=head.next;
         Node nexttemp2=head2.next;
         
-        while(temp2!=null||temp1!=temp2){
+        while(temp2!=null&&temp1!=null){
+            // temp1.next=temp2;
+            // temp1=nexttemp1;
+            // if(nexttemp1!=null)nexttemp1=nexttemp1.next;
+            // temp2.next=temp1;
+            // temp2=nexttemp2;
+            // if(nexttemp2!=null)nexttemp2=nexttemp2.next;
+            nexttemp1=temp1.next;
             temp1.next=temp2;
+            nexttemp2=temp2.next;
+            temp2.next=nexttemp1;
             temp1=nexttemp1;
-            if(nexttemp1!=null)nexttemp1=nexttemp1.next;
-            temp2.next=temp1;
             temp2=nexttemp2;
-            if(nexttemp2!=null)nexttemp2=nexttemp2.next;
         }
-        
+        // temp1.next=temp2;
+         
+          
     }
     public static void main(String args[]){
         linkedlist7 ll = new linkedlist7();

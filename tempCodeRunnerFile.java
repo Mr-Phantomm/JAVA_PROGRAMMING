@@ -1,1 +1,1 @@
-9+8-7*(6+3-4)/3
+ System.out.print(root.data+" ");

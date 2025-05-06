@@ -1,5 +1,5 @@
-public class tree1 {
-    public static class Node{
+public class tree1{
+     public static class Node{
         int data;
         Node left;
         Node right;
@@ -13,45 +13,55 @@ public class tree1 {
             this.right=null;
         }
     }
-   public static int i=-1;
-    public static Node root;
-    public static Node tree(int[] arr){
-        i++;
-        if(i>=arr.length||arr[i]==-1){
+    public static Node head;
+    static int idx=-1;
+    public static Node last(int[] arr){
+        idx++;
+        if(arr[idx]==-1){
             return null;
         }
-        Node root =new Node(arr[i]);
-        root.left=tree(arr);
-        root.right=tree(arr);
-        
-        return root;
+        Node nw=new Node(arr[idx]);
+        nw.left=last(arr);
+        nw.right=last(arr);
+        return nw;
+
     }
-    public static void print(Node root){
+    public static void preorder(Node root){
         if(root==null){
             System.out.print(-1+" ");
             return;
         }
         System.out.print(root.data+" ");
-        print(root.left);
-        print(root.right);
+        preorder(root.left);
+        preorder(root.right);
     }
-    
-    public static void printinorder(Node root){
+    public static void inorder(Node root){
         if(root==null){
             System.out.print(-1+" ");
             return;
         }
-        print(root.left);
+        inorder(root.left);
         System.out.print(root.data+" ");
-        print(root.right);
-        
+        inorder(root.right);
     }
-    
-    public static void main(String args[]){
-        int[] arr=new int[]{1,2,4,5,6,-1};
-        Node root =tree(arr);
-        print(root);
+    public static void postorder(Node root){
+        if(root==null){
+            System.out.print(-1+" ");
+            return;
+        }
+        postorder(root.left);
+        postorder(root.right);
+        System.out.print(root.data+" ");
+    }
+    public static void main(String[] args) {
+        int[] arr={1,2,3,-1,-1,4,-1,-1,4,-1,3,-1,-1};
+        head=last(arr);
+        System.out.println(head.data);
+        preorder(head);
         System.out.println();
-        printinorder(root);
+        inorder(head);
+        System.out.println();
+        postorder(head);
+
     }
 }

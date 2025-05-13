@@ -48,7 +48,7 @@ public class tree7 {
             }
             if(curr.curr.left!=null){
                 queue.offer(new Info(curr.curr.left,curr.x-1));
-                min-;
+                min--;
             }
             if(curr.curr.right!=null){
                 queue.offer(new Info(curr.curr.right,curr.x+1));

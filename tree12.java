@@ -1,3 +1,4 @@
+import java.util.*;
 public class tree12 {
     static class Node {
         int data;
@@ -36,14 +37,28 @@ public class tree12 {
     //     Node left=
 
     // }
-    public static 
+    public static Boolean fill(Stack<Node> st,Node root,Node find){
+        if(root==null)return false;
+        st.push(root);
+        if(root==find)return true;
+        if(fill(st,root.left,find)||fill(st,root.right,find))return true;
+        st.pop();
+        return false;
+
+    }
     public static void main(String args[]){
-        int arr={ 1, 2, 4, -1, -1, 5, -1, -1, 3, 6, -1, -1, 7, -1, -1 };
+        int[] arr={ 1, 2, 4, -1, -1, 5, -1, -1, 3, 6, -1, -1, 7, -1, -1 };
         Node root=createTree(arr);
         Node p = root.left.left; // Node with data 4
-        Node q = root.left.right;
-        int count=0;
+        // Node q = root.left.right;
+        // int count=0;
         // Node Lca=lca(root,p,q,false,count);
-
+        Stack<Node> st=new Stack<>();
+        fill(st,root,p);
+        int k=2;
+        for(int i=0;i<k;i++){
+            st.pop();
+        }
+        System.out.println(st.peek().data);
     }
 }

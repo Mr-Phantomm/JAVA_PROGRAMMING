@@ -16,6 +16,7 @@ public class tree14 {
         }
     }
     static int idx=-1;
+
     // static Node createTree(int[] arr){
     //     idx++;
     //     if(arr[idx]==-1||idx>=arr.length){
@@ -23,6 +24,10 @@ public class tree14 {
     //     }
     //     Node nw=new Node();
     // }
+    public static Boolean subtree(Node root,Node subroot){
+        if(root==null&&subroot==null)return true;
+        if(root==null)return false;
+    }
     public void main(String args[]){
         int a;
     }

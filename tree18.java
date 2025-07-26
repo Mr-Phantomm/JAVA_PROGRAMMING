@@ -48,10 +48,8 @@ public class tree18 {
     //     Node temp2=st.pop();
     //     insertAtBottom(st, temp);
     //     st.push(temp2);
-
     // }
     public static Node compare(Stack<Node> st1,Stack<Node> st2){
-
         Node prev=new Node();
         System.out.println(st1.peek().data);
         while(st1.peek()==st2.peek()&&!st1.isEmpty()&&!st2.isEmpty()){
@@ -68,7 +66,7 @@ public class tree18 {
     //         st.pop();
     //     }
     //     System.out.println();
-    //     // System.out.println(st2);
+    //     System.out.println(st2);
     // }
     public static Node common(Node root,Node p,Node q){
         if(root==null)return null;

@@ -13,5 +13,7 @@ public class cf10 {
             if(temp>=2)ans++;
         }
         System.out.println(ans);
+       
+
     }
 }

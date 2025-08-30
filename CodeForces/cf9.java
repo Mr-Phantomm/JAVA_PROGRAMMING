@@ -5,7 +5,7 @@ public class cf9 {
     int a=obj.nextInt();
     int b=obj.nextInt();
     int year=0;
-    while(a<b){
+    while(a<=b){
         a*=3;
         b*=2;
         year++;

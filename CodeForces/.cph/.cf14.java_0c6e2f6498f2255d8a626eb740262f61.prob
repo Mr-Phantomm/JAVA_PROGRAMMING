@@ -1,0 +1,1 @@
+{"name":"Local: cf14","url":"u:\\JAVA_PROGRAMMING\\CodeForces\\cf14.java","tests":[{"id":1756809796974,"input":"4\n3 2 1 2\n","output":"1 2 2 3 \n"},{"id":1756809808734,"input":"3\n2 3 8\n","output":"2 3 8 \n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"u:\\JAVA_PROGRAMMING\\CodeForces\\cf14.java","group":"local","local":true}

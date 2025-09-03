@@ -9,7 +9,7 @@ public class cf12 {
         Map<Integer,Set<Character>> map=new HashMap<>();
         for(int i =0;i<row;i++){
             str=obj.nextLine();
-            
+            for(int j=0;j<)
         } 
     }
 }

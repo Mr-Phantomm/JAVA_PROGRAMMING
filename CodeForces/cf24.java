@@ -1,5 +1,11 @@
 import java.util.Scanner;
 public class cf24 {
+    public static int gcd(int a,int b){
+        while(b%a==0){
+            int temp=a;
+
+        }
+    }
     public static void main(String args[]){
         Scanner obj=new Scanner(System.in);
         int max=0;

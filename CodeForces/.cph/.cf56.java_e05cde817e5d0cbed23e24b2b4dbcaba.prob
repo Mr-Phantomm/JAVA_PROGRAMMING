@@ -1,0 +1,1 @@
+{"name":"Local: cf56","url":"u:\\JAVA_PROGRAMMING\\CodeForces\\cf56.java","tests":[{"id":1767954952957,"input":"3\n3 7\n1 2 5\n3 6\n1 2 5\n1 10\n7\n","output":"4\n3\n7\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"u:\\JAVA_PROGRAMMING\\CodeForces\\cf56.java","group":"local","local":true}

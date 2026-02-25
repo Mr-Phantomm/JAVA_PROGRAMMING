@@ -5,4 +5,3 @@ public class MyFirstJavaApp {
     System.out.println("Hello, World!");
 }
 
-}

@@ -14,6 +14,6 @@
 // }
 public class BitAsssignment {
     public int sign(int n){
-        
+        return 0;    
     }
 }
